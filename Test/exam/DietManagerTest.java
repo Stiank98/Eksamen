@@ -42,7 +42,7 @@ public class DietManagerTest {
         Food[] tabell = {M1,M2,M4};
         HypercaloricDiet hypercaloricDiet = dietManager.randomDiet(person1,tabell);
         Assert.assertTrue(hypercaloricDiet.purpose.equals("Random diet"));
-        Assert.assertTrue(hypercaloricDiet.MaxWeightKg > person1.weight && hypercaloricDiet.MaxWeightKg < person1.weight+20);
+        Assert.assertTrue(hypercaloricDiet.maxWeightKg > person1.weight && hypercaloricDiet.maxWeightKg < person1.weight+20);
         Assert.assertFalse(Arrays.asList(hypercaloricDiet.allowedFood).contains(M3));
     }
 }

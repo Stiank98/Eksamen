@@ -11,7 +11,7 @@ public abstract class Diet {
     //1C
     public boolean checkIsVegan(Food[] allowedFood){
          for(int i = 0;i<allowedFood.length; i++){
-             if (!allowedFood[i].IsVegan){
+             if (!allowedFood[i].isVegan){
                  return false;
              }
          }

@@ -14,7 +14,7 @@ public class Person {
         this.diet = diet;
         this.weight = weight;
         // oppgave 2A.  their favorite food is non-vegan, they cannot follow a VeganDiet.
-        if(!favoritefood.IsVegan && VeganDiet.class.isInstance(diet)){
+        if(!favoritefood.isVegan && VeganDiet.class.isInstance(diet)){
             throw new Exception("Favorite food is non-vegan, they cannot follow a VeganDiet.");
         }
         // Loope gjennom og teller antall allergiske mat i dietten. Oppgave 2B
@@ -45,7 +45,7 @@ public class Person {
         //2D personen sin vekt kan ikke være mer enn hyper cal dietten sin max vekt
         if(HypercaloricDiet.class.isInstance(diet)) {
             HypercaloricDiet h = (HypercaloricDiet) diet;
-            if (h.MaxWeightKg < weight) {
+            if (h.maxWeightKg < weight) {
                 throw new Exception("The weight to this person is higher than the hyper cal diet minimum weight");
             }
         }
