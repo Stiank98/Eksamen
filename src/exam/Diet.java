@@ -28,8 +28,8 @@ public abstract class Diet {
     //3A
     public String writeDuration(){
         String dietType = this.getClass().toString();
-        //fjerne "class " i strengen
-        dietType = dietType.substring(6);
+        //fjerne "class exam." i strengen
+        dietType = dietType.substring(11);
         if(daysDuration >= 365) {
             return "This " + dietType + " lasts for " + daysDuration/365 + " years, " + (daysDuration%365)/31 + " month and " + ((daysDuration%365)%31) +" days";
         }
@@ -43,7 +43,7 @@ public abstract class Diet {
     public String writeAllowedFood(){
         String dietType = this.getClass().toString();
         //fjerne "class " i strengen
-        dietType = dietType.substring(6);
+        dietType = dietType.substring(11);
         String Foods = "The following food is allowed in this " + dietType + ": ";
 
         for(int i = 0;i<allowedFood.length;i++){

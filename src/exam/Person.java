@@ -15,8 +15,7 @@ public class Person {
         this.weight = weight;
         // oppgave 2A.  their favorite food is non-vegan, they cannot follow a VeganDiet.
         if(!favoritefood.IsVegan && VeganDiet.class.isInstance(diet)){
-            throw new Exception("favorite food is non-vegan, they cannot follow a VeganDiet.");
-
+            throw new Exception("Favorite food is non-vegan, they cannot follow a VeganDiet.");
         }
         // Loope gjennom og teller antall allergiske mat i dietten. Oppgave 2B
         int totalallergi = 0;
@@ -25,8 +24,8 @@ public class Person {
                 totalallergi++;
             }
         }
-        // Regne ut mer om person er 50% allergisk til maten. oppgave 2B
-        if(totalallergi<diet.allowedFood.length/2){
+        // Regne ut mer om person er mer 50% allergisk til maten. oppgave 2B
+        if((double)totalallergi>=(double)diet.allowedFood.length/2){
             throw new Exception("This person allergic to 50% more of the food allowed by the diet.");
         }
         //2C personen sin vekt kan ikke være mindre enn dietten sin minimums vekt
@@ -39,15 +38,15 @@ public class Person {
         //2C personen sin vekt kan ikke være mindre enn dietten sin minimums vekt
         if(LowCarbDiet.class.isInstance(diet)) {
             LowCarbDiet l = (LowCarbDiet) diet;
-            if(l.minWeightKg < weight) {
+            if(l.minWeightKg > weight) {
                 throw new Exception("The weight to this person is lower than the low carbo diet minimum weight");
             }
         }
         //2D personen sin vekt kan ikke være mer enn hyper cal dietten sin max vekt
         if(HypercaloricDiet.class.isInstance(diet)) {
             HypercaloricDiet h = (HypercaloricDiet) diet;
-            if (h.MaxWeightKg > weight) {
-                throw new Exception("The weight to this person is higher than the hyper col diet minimum weight");
+            if (h.MaxWeightKg < weight) {
+                throw new Exception("The weight to this person is higher than the hyper cal diet minimum weight");
             }
         }
     }

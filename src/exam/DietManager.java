@@ -40,6 +40,7 @@ public class DietManager {
         //4B ii teksten "Random diet" har blit lagt til i konstruktøren
         HypercaloricDiet HyperD = new HypercaloricDiet(n,"Random diet",nonAllergicFood,Weight,minCaloriesPerDay);
 
-        return HyperD;}
+        return HyperD;
+    }
 }
 
