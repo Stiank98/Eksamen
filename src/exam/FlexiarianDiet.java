@@ -20,7 +20,7 @@ public class FlexiarianDiet extends Diet {
         super(daysDuration, purpose, allowedFood);
         this.maxMeatGramsPerWeek = maxMeatGramsPerWeek;
     // 1D. The preferred meat in a FlexitarianDiet MUST be non-vegan food of protein type.
-        if(!isProtein(preferredMeat) || preferredMeat.isVegan) throw new Exception("not good meat for flexiarian");
+        if(!isProtein(preferredMeat) || preferredMeat.isVegan) throw new Exception("Prefer meat must be non-vegan food of protein type");
         this.preferredMeat = preferredMeat;
     }
 }
