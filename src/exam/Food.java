@@ -9,7 +9,7 @@ public class Food {
      public Food(String name, float caloriesPer100g, boolean isVegan, FoodType type) {
           this.name = name;
           this.caloriesPer100g = caloriesPer100g;
-          isVegan = isVegan;
+          this.isVegan = isVegan;
           this.type = type;
      }
 }
