@@ -26,7 +26,7 @@ public class DietManagerTest {
         Food[] allergic1 = {M3};
         Food[] allergic2 = {M4};
         Food[] tabell = {M1,M2,M3,M1};
-        lowCarbDiet = new LowCarbDiet(70,"Folk som vil gå ned i vekt",tabell,90);
+        lowCarbDiet = new LowCarbDiet(70,"Folk som vil gå ned i vekt",tabell,60);
         person1 = new Person(M1,allergic1, lowCarbDiet, 80);
         person2 = new Person(M1,allergic2, lowCarbDiet, 80);
     }
