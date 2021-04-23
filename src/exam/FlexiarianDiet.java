@@ -6,7 +6,7 @@ public class FlexiarianDiet extends Diet {
     float maxMeatGramsPerWeek;
     Food preferredMeat;
 
-    //1E
+    //1E The maximum carb-type foods that can be included in a LowCarbDiet is two.
     public boolean isProtein(Food food){
        if(food.type == FoodType.Protein){
            return true;

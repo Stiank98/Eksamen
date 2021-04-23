@@ -31,7 +31,7 @@ public class Person {
         //2C personen sin vekt kan ikke være mindre enn dietten sin minimums vekt
         if(VeganDiet.class.isInstance(diet)){
             VeganDiet v = (VeganDiet) diet;
-            if(v.minWeightKg < weight){
+            if(v.minWeightKg > weight){
                 throw new Exception("The weight to this person is lower than the Vegan diet minimum weight");
             }
         }

@@ -21,9 +21,9 @@ public class DietTest {
     public void initialization() throws Exception{
         Food[] tabell = {M4};
         Food[] tabell2 = {M1,M2,M3};
-        veganDiet =  new VeganDiet(3,"folk som ikke vil drepe dyr", tabell,50);
-        lowCarbDiet = new LowCarbDiet(70,"Folk som vil gå ned i vekt",tabell2,50);
-        flexiarianDiet = new FlexiarianDiet(400,"Fleksi diett",tabell,50, M3);
+        veganDiet =  new VeganDiet(3,"People who dont like to eat meat", tabell,50);
+        lowCarbDiet = new LowCarbDiet(70,"How to lose weight",tabell2,50);
+        flexiarianDiet = new FlexiarianDiet(400,"Flexi diett",tabell,50, M3);
         hypercaloricDiet = new HypercaloricDiet(40, "Hyper cal diett", tabell, 50,50);
     }
 
@@ -31,7 +31,7 @@ public class DietTest {
     public void dietWriteDurationLessThanOneMonthTest() {
         Assert.assertTrue(veganDiet.writeDuration().equals("This VeganDiet lasts for 3 days"));
     }
-
+//
     @Test
     public void dietWriteDurationLessThanOneYearTest() {
         Assert.assertTrue(hypercaloricDiet.writeDuration().equals("This HypercaloricDiet lasts for 1 months and 9 days"));
@@ -47,4 +47,15 @@ public class DietTest {
     public void dietWriteAllowFoodTest() {
         Assert.assertTrue(lowCarbDiet.writeAllowedFood().equals("The following food is allowed in this LowCarbDiet: Pizza,Lassagne,Kyllingsalat,"));
     }
+    @Test
+    public void isVeganTest()throws Exception{
+        Food[] vegan = {M4};
+        Food[] nonVegan = {M1,M2,M3};
+        veganDiet =  new VeganDiet(3,"People who dont like to eat meat",vegan,50);
+        lowCarbDiet = new LowCarbDiet(70,"How to lose weight",nonVegan,50);
+        Assert.assertTrue(veganDiet.IsVegan);
+        Assert.assertFalse(lowCarbDiet.IsVegan);
+    }
 }
+
+

@@ -2,7 +2,6 @@ package exam;
 
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class PersonTest {
@@ -58,6 +57,17 @@ public class PersonTest {
         } catch (Exception e) {
             Assert.assertTrue(e.getMessage().equals("The weight to this person is higher than the hyper cal diet minimum weight"));
         }
-    }
 
+    }
+    @Test
+    public void veganDietWeightTest(){
+        Food[] allergic = {};
+        Food[] allowedFood = {M4};
+        try {
+            VeganDiet veganDiet = new VeganDiet(34,"Vegan Diett",allowedFood,64);
+            Person person = new Person(M4,allergic,veganDiet,50);
+        } catch (Exception e) {
+            Assert.assertTrue(e.getMessage().equals("The weight to this person is lower than the Vegan diet minimum weight"));
+        }
+    }
 }
