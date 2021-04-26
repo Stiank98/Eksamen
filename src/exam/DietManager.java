@@ -8,7 +8,7 @@ public class DietManager {
 
     public boolean areCompatible(Person person, Diet diet) {
         boolean b = true;
-        // loope gjennom person sine allergier og sjekker om det innholder i Dieten.
+        // Loop through the person's allergies and check if it contains in the Diet.
         for(int i = 0; i< person.allergies.length; i++){
             if(Arrays.asList(diet.allowedFood).contains(person.allergies[i])){
                 b = false;
@@ -37,7 +37,7 @@ public class DietManager {
             }
         }
 
-        //4B ii teksten "Random diet" har blit lagt til i konstruktøren
+        // Requirement 4B ii the text "Random diet" has been added to the constructor.
         HypercaloricDiet HyperD = new HypercaloricDiet(n,"Random diet",nonAllergicFood,Weight,minCaloriesPerDay);
 
         return HyperD;
